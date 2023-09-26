@@ -56,7 +56,7 @@ public class Adventure {
             System.out.println("Going " + retning);
         } else {
             // Udskriver fejlmeddelelse
-            System.out.println("You cannot go that way");
+            System.out.println("You cannot go that wa");
         }
     }
 
