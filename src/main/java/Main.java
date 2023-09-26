@@ -1,5 +1,16 @@
+import java.util.Scanner;
 public class Main {
     public static void main(String[]args){
-        System.out.println("hello worl");
+Adventure adventure = new Adventure();
+Scanner keyboard = new Scanner(System.in);
+
+String retning= keyboard.nextLine();
+
+    adventure.move(retning);
+        System.out.println(adventure.getRetning());
+String help = keyboard.nextLine();
+
+adventure.help(help);
+        System.out.println(adventure.getHelp());
     }
 }
