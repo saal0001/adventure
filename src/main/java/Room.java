@@ -1,5 +1,5 @@
 public class Room {
-    private String room;
+    private Room room;
 private String roomWest;
 private String roomEast;
 private String roomNorth;
@@ -27,7 +27,7 @@ public void setRoomWest(Room room){
         this.roomSouth=roomSouth;
     }
 
-public String getRoom(){
+public Room getRoom(){
     return room;
 }
 
