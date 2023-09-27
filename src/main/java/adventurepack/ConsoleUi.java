@@ -7,10 +7,16 @@ public class ConsoleUi {
     Scanner scanner = new Scanner(System.in);
     boolean fortsæt = true;
     private Adventure adventure;
+    private Maps maps;
+
+    public ConsoleUi(){
+        adventure = new Adventure();
+        maps = new Maps();
+
+    }
 
 
     public void run() {
-        adventure = new Adventure();
         while (fortsæt) {
             System.out.println("Welcome to the adventure game");
             System.out.println("\nMENU: ");
@@ -39,7 +45,7 @@ public class ConsoleUi {
 
     private void startGame() {
         // Build the map
-        adventure.buildMap();
+        maps.buildMap();
 
         while (true) {
             System.out.println("Enter a command: ");
