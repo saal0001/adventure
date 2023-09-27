@@ -1,17 +1,16 @@
 package adventurepack;
 
-import adventurepack.Adventure;
 import java.util.Scanner;
 
 public class ConsoleUi {
     Scanner scanner = new Scanner(System.in);
     boolean fortsæt = true;
     private Adventure adventure;
-    private Maps maps;
+    private Map map;
 
     public ConsoleUi(){
         adventure = new Adventure();
-        maps = new Maps();
+        map = new Map();
 
     }
 
@@ -45,7 +44,7 @@ public class ConsoleUi {
 
     private void startGame() {
         // Build the map
-        maps.buildMap();
+        map.buildMap();
 
         while (true) {
             System.out.println("Enter a command: ");

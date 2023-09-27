@@ -1,18 +1,16 @@
 package adventurepack;
 
-import adventurepack.Room;
-
-public class Maps {
-    public Room currentRoom;
-    public Room room1;
-    public Room room2;
-    public Room room3;
-    public Room room4;
-    public Room room5;
-    public Room room6;
-    public Room room7;
-    public Room room8;
-    public Room room9;
+public class Map {
+    private Room currentRoom;
+    private Room room1;
+    private Room room2;
+    private Room room3;
+    private Room room4;
+    private Room room5;
+    private Room room6;
+    private Room room7;
+    private Room room8;
+    private Room room9;
 
 
     public void buildMap() {
@@ -53,7 +51,15 @@ public class Maps {
         this.room9.setNorth(this.room6);
         this.room9.setWest(this.room8);
 
-        currentRoom = room1;
+        this.currentRoom = this.room1;
+    }
+
+    public Room getCurrentRoom(){
+        return currentRoom;
+    }
+
+    public void setCurrentRoom(Room newRoom){
+        this.currentRoom=newRoom;
     }
 
 }
