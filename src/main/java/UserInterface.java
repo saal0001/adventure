@@ -21,6 +21,7 @@ Scanner keyboard = new Scanner(System.in);
 
         while (adventure.getCurrentRoom()!=adventure.room5){
         System.out.println("you are in "+adventure.getCurrentRoom().getName());
+
         String retning =keyboard.nextLine();
         adventure.move(retning);
         System.out.println(adventure.getCurrentRoom().getName()+" " + adventure.getCurrentRoom().getDescription());
