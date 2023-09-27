@@ -6,11 +6,13 @@ public class ConsoleUi {
     Scanner scanner = new Scanner(System.in);
     boolean fortsæt = true;
     private Adventure adventure;
+    private Player player;
     private Map map;
 
     public ConsoleUi(){
         adventure = new Adventure();
         map = new Map();
+        player = new Player();
 
     }
 
@@ -31,7 +33,7 @@ public class ConsoleUi {
                     startGame();
                     break;
                 case 2:
-                    getHelp();
+                    player.getHelp();
                     break;
                 case 3:
                     fortsæt = false;
@@ -49,25 +51,24 @@ public class ConsoleUi {
         while (true) {
             System.out.println("Enter a command: ");
             String command = new Scanner(System.in).nextLine();
-
             switch (command) {
                 case "go north":
-                    adventure.move("north");
+                    player.move("north");
                     break;
                 case "go east":
-                    adventure.move("east");
+                    player.move("east");
                     break;
                 case "go south":
-                    adventure.move("south");
+                    player.move("south");
                     break;
                 case "go west":
-                    adventure.move("west");
+                    player.move("west");
                     break;
                 case "look around":
-                    adventure.lookAround();
+                    player.lookAround();
                     break;
                 case "help":
-                    adventure.getHelp();
+                    player.getHelp();
                     break;
                 case "quit":
                     System.exit(0);
@@ -78,9 +79,5 @@ public class ConsoleUi {
         }
     }
 
-    private void getHelp() {
-        System.out.println("Welcome to help");
-        System.out.println("You can write the commands, go north, go east, go south, go west to choose which way to go");
-        System.out.println("You can also use the command Look around, to look around the room, and get a description of ur surroundings");
-    }
+
 }

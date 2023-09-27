@@ -54,12 +54,12 @@ public class Map {
         this.currentRoom = this.room1;
     }
 
-    public Room getCurrentRoom(){
+    public Room getCurrentRoom() {
         return currentRoom;
     }
 
-    public void setCurrentRoom(Room newRoom){
-        this.currentRoom=newRoom;
+    public void setCurrentRoom(Room newRoom) {
+        this.currentRoom = newRoom;
     }
-
 }
+

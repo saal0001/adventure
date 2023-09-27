@@ -52,7 +52,7 @@ public class Room {
         return description;
     }
 
-    public Room getRoom(String direction) {
+   public Room getRoom(String direction) {
         switch (direction) {
             case "north":
                 return north != null ? north : null;
