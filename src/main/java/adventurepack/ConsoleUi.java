@@ -61,6 +61,8 @@ public class ConsoleUi {
                 case "look around":
                     adventure.look();
                     break;
+                case "pick up":
+                    adventure.pickUp();
                 case "help":
                     getHelp();
                     break;

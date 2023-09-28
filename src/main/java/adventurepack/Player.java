@@ -1,8 +1,15 @@
 package adventurepack;
 
+import java.util.ArrayList;
+
 public class Player {
     private Room currentRoom;
+    private ArrayList<Item> inventory=new ArrayList<>();
+    private Item pickup;
 
+    public void pickUp(Item item){
+        inventory.add(item);
+    }
 public void setCurrentRoom(Room newRoom){
     this.currentRoom=newRoom;
 }

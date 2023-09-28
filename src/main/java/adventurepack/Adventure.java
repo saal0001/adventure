@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Adventure {
 private Map map;
 private Player player;
+private Item item;
     public Adventure() {
         map = new Map();
         map.buildMap();
@@ -17,6 +18,10 @@ public void move(String retning){
 
 public void look(){
         player.lookAround();
+}
+
+public void pickUp(){
+        player.pickUp(item);
 }
 
 
