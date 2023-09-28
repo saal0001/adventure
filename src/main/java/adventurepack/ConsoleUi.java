@@ -1,23 +1,17 @@
 package adventurepack;
 
+import adventurepack.Adventure;
 import java.util.Scanner;
 
 public class ConsoleUi {
     Scanner scanner = new Scanner(System.in);
     boolean fortsæt = true;
-    private Adventure adventure;
-    private Player player;
-    private Map map;
+    private Adventure adventure = new Adventure();
 
-    public ConsoleUi(){
-        adventure = new Adventure();
-        map = new Map();
-        player = new Player();
-
-    }
 
 
     public void run() {
+        adventure = new Adventure();
         while (fortsæt) {
             System.out.println("Welcome to the adventure game");
             System.out.println("\nMENU: ");
@@ -33,7 +27,7 @@ public class ConsoleUi {
                     startGame();
                     break;
                 case 2:
-                    player.getHelp();
+                    getHelp();
                     break;
                 case 3:
                     fortsæt = false;
@@ -46,29 +40,29 @@ public class ConsoleUi {
 
     private void startGame() {
         // Build the map
-        map.buildMap();
 
         while (true) {
             System.out.println("Enter a command: ");
             String command = new Scanner(System.in).nextLine();
+
             switch (command) {
                 case "go north":
-                    player.move("north");
+                    adventure.move("north");
                     break;
                 case "go east":
-                    player.move("east");
+                    adventure.move("east");
                     break;
                 case "go south":
-                    player.move("south");
+                    adventure.move("south");
                     break;
                 case "go west":
-                    player.move("west");
+                    adventure.move("west");
                     break;
                 case "look around":
-                    player.lookAround();
+                    adventure.look();
                     break;
                 case "help":
-                    player.getHelp();
+                    getHelp();
                     break;
                 case "quit":
                     System.exit(0);
@@ -79,5 +73,9 @@ public class ConsoleUi {
         }
     }
 
-
+    private void getHelp() {
+        System.out.println("Welcome to help");
+        System.out.println("You can write the commands, go north, go east, go south, go west to choose which way to go");
+        System.out.println("You can also use the command Look around, to look around the room, and get a description of ur surroundings");
+    }
 }
