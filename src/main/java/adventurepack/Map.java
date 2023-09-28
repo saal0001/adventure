@@ -21,6 +21,7 @@ public Map(){
     public void buildMap() {
 
          room1 = new Room("room1", "dark big room with a waterfall and skeletons at the wall");
+         room1.getRoomItems().add(new Item("flashlight","can light up the room"));
          room2 = new Room("room2", "you are in a room with no ceiling. you can see the sun and a bright rainbow");
          room3 = new Room("room3", "you are in a room full of diffrent minerals very bright and beautifull");
          room4 = new Room("room4", "you are in a smelly room full of eggshells");

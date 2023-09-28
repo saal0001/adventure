@@ -9,7 +9,19 @@ public class Player {
 
     public void pickUp(Item item){
         inventory.add(item);
+        getCurrentRoom().getRoomItems().remove(item);
     }
+
+    public void drop(Item item){
+        inventory.remove(item);
+    }
+
+    public ArrayList<Item> getInventory(){
+        if (inventory!=null)
+            System.out.println(inventory);
+        return inventory;
+    }
+
 public void setCurrentRoom(Room newRoom){
     this.currentRoom=newRoom;
 }
@@ -30,4 +42,8 @@ public void setCurrentRoom(Room newRoom){
         System.out.println(currentRoom.getName() + ": " + currentRoom.getDescription());
     }
 
+
+    public Room getCurrentRoom(){
+        return currentRoom;
+    }
 }

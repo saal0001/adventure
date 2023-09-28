@@ -1,4 +1,5 @@
 package adventurepack;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Adventure {
@@ -24,6 +25,17 @@ public void pickUp(){
         player.pickUp(item);
 }
 
+public void drop(){
+        player.drop(item);
+}
+
+public void getInventury(){
+        player.getInventory();
+}
+
+public ArrayList<Item> getRoomItems(){
+        return player.getCurrentRoom().getRoomItems();
+}
 
 
 }

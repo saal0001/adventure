@@ -63,6 +63,13 @@ public class ConsoleUi {
                     break;
                 case "pick up":
                     adventure.pickUp();
+                    break;
+                case "drop":
+                    adventure.drop();
+                    break;
+                case "inventory":
+                    adventure.getInventury();
+                    break;
                 case "help":
                     getHelp();
                     break;
