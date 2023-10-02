@@ -25,8 +25,8 @@ public void pickUp(String itemName){
         player.pickUp(itemName);
 }
 
-public void drop(){
-        player.drop(item);
+public void drop(String itemName){
+        player.drop(itemName);
 }
 
 public void getInventury(){

@@ -21,7 +21,7 @@ public class ConsoleUi {
 
             System.out.println("Choose an option: ");
             int menuValg = scanner.nextInt();
-
+            scanner.nextLine();
             switch (menuValg) {
                 case 1:
                     startGame();
@@ -40,10 +40,10 @@ public class ConsoleUi {
 
     private void startGame() {
         // Build the map
-
+        String itemName;
         while (true) {
             System.out.println("Enter a command: ");
-            String command = new Scanner(System.in).nextLine();
+            String command = scanner.nextLine();
 
             switch (command) {
                 case "go north":
@@ -63,11 +63,13 @@ public class ConsoleUi {
                     break;
                 case "pick up":
                     System.out.println("what do you want to pick up");
-                    String itemName= scanner.nextLine();
+                    itemName= scanner.nextLine();
                     adventure.pickUp(itemName);
                     break;
                 case "drop":
-                    adventure.drop();
+                    System.out.println("what do you want to drop");
+                    itemName=scanner.nextLine();
+                    adventure.drop(itemName);
                     break;
                 case "inventory":
                     adventure.getInventury();

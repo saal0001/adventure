@@ -8,20 +8,26 @@ public class Player {
     private int health=50;
 
 
-public void eat(){
+public void eat(String itemName){
 
 }
     public void pickUp(String itemName){
+    Item found=null;
         for (Item item: currentRoom.getRoomItems())
         if (item.getName().equals(itemName)){
         inventory.add(item);
-            System.out.println("test virker");
+        found=item;
         }
-        //currentRoom.getRoomItems().remove(item);
+        currentRoom.getRoomItems().remove(found);
     }
 
-    public void drop(Item item){
-        inventory.remove(item);
+    public void drop(String itemName){
+    Item found=null;
+    for (Item item:currentRoom.getRoomItems())
+        if (item.getName().equals(itemName)) {
+            inventory.remove(item);
+        }
+    currentRoom.getRoomItems().add(found);
     }
 
     public void getInventory(){

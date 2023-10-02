@@ -80,9 +80,11 @@ public void addItem(String name, String description){
         roomItems.add(new Item(name,description));
 }
 
-public Item findItem(String name){
-        for (Item item:roomItems)
-}
+/*public Item findItem(String name){
+        for (Item item:roomItems){
+
+        }
+}*/
 }
 
 
