@@ -71,6 +71,8 @@ public class ConsoleUi {
                     itemName=scanner.nextLine();
                     adventure.drop(itemName);
                     break;
+                case "health":
+                    System.out.println(adventure.getHealth());
                 case "inventory":
                     adventure.getInventury();
                     break;

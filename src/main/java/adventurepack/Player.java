@@ -8,9 +8,9 @@ public class Player {
     private int health=50;
 
 
-public void eat(String itemName){
-
-}
+/*public void eat(String itemName){
+health+
+}*/
     public void pickUp(String itemName){
     Item found=null;
         for (Item item: currentRoom.getRoomItems())
@@ -34,6 +34,7 @@ public void eat(String itemName){
         if (inventory!=null){
             System.out.println(inventory);
         }
+        else System.out.println("inventory is empty");
     }
 
 public void setCurrentRoom(Room newRoom){
@@ -61,5 +62,8 @@ public void setCurrentRoom(Room newRoom){
         return currentRoom;
     }
 
+    public int getHealth(){
+    return health;
+    }
 
 }

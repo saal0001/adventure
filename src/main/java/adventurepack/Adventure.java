@@ -36,7 +36,9 @@ public void getInventury(){
 public ArrayList<Item> getRoomItems(){
         return player.getCurrentRoom().getRoomItems();
 }
-
+public int getHealth(){
+        return player.getHealth();
+}
 
 }
 

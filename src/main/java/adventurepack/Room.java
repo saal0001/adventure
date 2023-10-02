@@ -1,5 +1,6 @@
 package adventurepack;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Room {
@@ -78,6 +79,10 @@ public class Room {
 
 public void addItem(String name, String description){
         roomItems.add(new Item(name,description));
+}
+
+public void addFood(String name, String description,int healthPoints){
+        roomItems.add(new Food(name, description,healthPoints));
 }
 
 /*public Item findItem(String name){
