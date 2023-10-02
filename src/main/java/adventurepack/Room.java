@@ -75,6 +75,14 @@ public class Room {
     public ArrayList<Item> getRoomItems(){
         return roomItems;
     }
+
+public void addItem(String name, String description){
+        roomItems.add(new Item(name,description));
+}
+
+public Item findItem(String name){
+        for (Item item:roomItems)
+}
 }
 
 

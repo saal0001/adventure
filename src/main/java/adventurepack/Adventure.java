@@ -21,8 +21,8 @@ public void look(){
         player.lookAround();
 }
 
-public void pickUp(){
-        player.pickUp(item);
+public void pickUp(String itemName){
+        player.pickUp(itemName);
 }
 
 public void drop(){
@@ -39,5 +39,6 @@ public ArrayList<Item> getRoomItems(){
 
 
 }
+
 
 

@@ -62,7 +62,9 @@ public class ConsoleUi {
                     adventure.look();
                     break;
                 case "pick up":
-                    adventure.pickUp();
+                    System.out.println("what do you want to pick up");
+                    String itemName= scanner.nextLine();
+                    adventure.pickUp(itemName);
                     break;
                 case "drop":
                     adventure.drop();

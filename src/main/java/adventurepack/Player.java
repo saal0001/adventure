@@ -5,21 +5,29 @@ import java.util.ArrayList;
 public class Player {
     private Room currentRoom;
     private ArrayList<Item> inventory=new ArrayList<>();
-    private Item pickup;
+    private int health=50;
 
-    public void pickUp(Item item){
+
+public void eat(){
+
+}
+    public void pickUp(String itemName){
+        for (Item item: currentRoom.getRoomItems())
+        if (item.getName().equals(itemName)){
         inventory.add(item);
-        getCurrentRoom().getRoomItems().remove(item);
+            System.out.println("test virker");
+        }
+        //currentRoom.getRoomItems().remove(item);
     }
 
     public void drop(Item item){
         inventory.remove(item);
     }
 
-    public ArrayList<Item> getInventory(){
-        if (inventory!=null)
+    public void getInventory(){
+        if (inventory!=null){
             System.out.println(inventory);
-        return inventory;
+        }
     }
 
 public void setCurrentRoom(Room newRoom){
@@ -39,11 +47,13 @@ public void setCurrentRoom(Room newRoom){
     }
 
     public void lookAround() {
-        System.out.println(currentRoom.getName() + ": " + currentRoom.getDescription());
+        System.out.println(currentRoom.getName() + ": " + currentRoom.getDescription()+" "+ currentRoom.getRoomItems());
     }
 
 
     public Room getCurrentRoom(){
         return currentRoom;
     }
+
+
 }
