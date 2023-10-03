@@ -4,42 +4,54 @@ import java.util.ArrayList;
 
 public class Player {
     private Room currentRoom;
-    private ArrayList<Item> inventory=new ArrayList<>();
-    private int health=50;
+    private ArrayList<Item> inventory = new ArrayList<>();
+    private int health = 50;
 
+public enum eatNoTrue{
 
-/*public void eat(String itemName){
-health+
-}*/
-    public void pickUp(String itemName){
-    Item found=null;
-        for (Item item: currentRoom.getRoomItems())
-        if (item.getName().equals(itemName)){
-        inventory.add(item);
-        found=item;
+    }
+    public boolean eat(String itemName) {
+        for (Item item : inventory) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
+                if (item instanceof Food) {
+                    health = ((Food) item).getHealthPoints() + health;
+                    inventory.remove(item);
+                    return true;
+                }
+            }
         }
+        return false;
+    }
+
+
+    public void pickUp(String itemName) {
+        Item found = null;
+        for (Item item : currentRoom.getRoomItems())
+            if (item.getName().equals(itemName)) {
+                inventory.add(item);
+                found = item;
+            }
         currentRoom.getRoomItems().remove(found);
     }
 
-    public void drop(String itemName){
-    Item found=null;
-    for (Item item:currentRoom.getRoomItems())
-        if (item.getName().equals(itemName)) {
-            inventory.remove(item);
-        }
-    currentRoom.getRoomItems().add(found);
+    public void drop(String itemName) {
+        Item found = null;
+        for (Item item : currentRoom.getRoomItems())
+            if (item.getName().equals(itemName)) {
+                inventory.remove(item);
+            }
+        currentRoom.getRoomItems().add(found);
     }
 
-    public void getInventory(){
-        if (inventory!=null){
+    public void getInventory() {
+        if (inventory != null) {
             System.out.println(inventory);
-        }
-        else System.out.println("inventory is empty");
+        } else System.out.println("inventory is empty");
     }
 
-public void setCurrentRoom(Room newRoom){
-    this.currentRoom=newRoom;
-}
+    public void setCurrentRoom(Room newRoom) {
+        this.currentRoom = newRoom;
+    }
 
     public void move(String retning) {
         Room nextRoom = currentRoom.getRoom(retning);
@@ -54,16 +66,16 @@ public void setCurrentRoom(Room newRoom){
     }
 
     public void lookAround() {
-        System.out.println(currentRoom.getName() + ": " + currentRoom.getDescription()+" "+ currentRoom.getRoomItems());
+        System.out.println(currentRoom.getName() + ": " + currentRoom.getDescription() + " " + currentRoom.getRoomItems());
     }
 
 
-    public Room getCurrentRoom(){
+    public Room getCurrentRoom() {
         return currentRoom;
     }
 
-    public int getHealth(){
-    return health;
+    public int getHealth() {
+        return health;
     }
 
 }

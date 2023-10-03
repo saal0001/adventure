@@ -73,6 +73,14 @@ public class ConsoleUi {
                     break;
                 case "health":
                     System.out.println(adventure.getHealth());
+                    break;
+                case "eat":
+                    System.out.println("what do you want to eat");
+                    itemName=scanner.nextLine();
+                    if (!adventure.eat(itemName)) {
+                        System.out.println();
+                }
+                    break;
                 case "inventory":
                     adventure.getInventury();
                     break;

@@ -40,6 +40,10 @@ public int getHealth(){
         return player.getHealth();
 }
 
+public boolean eat(String itemName){
+        return player.eat(itemName);
+}
+
 }
 
 
