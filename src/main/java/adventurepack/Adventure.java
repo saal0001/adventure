@@ -40,8 +40,12 @@ public int getHealth(){
         return player.getHealth();
 }
 
-public boolean eat(String itemName){
-        return player.eat(itemName);
+public void eat(String itemName){
+        player.eat(itemName);
+}
+
+public enum eatNotTrue{
+
 }
 
 }

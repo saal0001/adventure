@@ -5,22 +5,39 @@ import java.util.ArrayList;
 public class Player {
     private Room currentRoom;
     private ArrayList<Item> inventory = new ArrayList<>();
-    private int health = 50;
+private int health=100;
+private Weapon currentWeapon;
 
-public enum eatNoTrue{
 
+
+public void equip(String itemName){
+    for (Item item : inventory){
+        if (item.getName().equalsIgnoreCase(itemName)){
+            if (item instanceof Weapon){
+                item=currentWeapon;
+                System.out.println(currentWeapon);
+                inventory.remove(item);
+            }
+        }
+        else System.out.println("item not equippable");
     }
-    public boolean eat(String itemName) {
+    System.out.println("item not in inventory");
+}
+
+
+
+
+    public void eat(String itemName) {
         for (Item item : inventory) {
             if (item.getName().equalsIgnoreCase(itemName)) {
                 if (item instanceof Food) {
                     health = ((Food) item).getHealthPoints() + health;
                     inventory.remove(item);
-                    return true;
                 }
             }
+            else System.out.println("not edible");
         }
-        return false;
+        System.out.println("not in inventory");
     }
 
 
@@ -46,7 +63,7 @@ public enum eatNoTrue{
     public void getInventory() {
         if (inventory != null) {
             System.out.println(inventory);
-        } else System.out.println("inventory is empty");
+        }
     }
 
     public void setCurrentRoom(Room newRoom) {

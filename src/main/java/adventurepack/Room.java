@@ -85,7 +85,9 @@ public void addFood(String name, String description,int healthPoints){
         roomItems.add(new Food(name, description,healthPoints));
 }
 
-public void addWeapon
+public void addWeapon(String name, String description,int damage){
+        roomItems.add(new Weapon(name,description,damage));
+}
 
 }
 

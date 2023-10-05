@@ -77,9 +77,7 @@ public class ConsoleUi {
                 case "eat":
                     System.out.println("what do you want to eat");
                     itemName=scanner.nextLine();
-                    if (!adventure.eat(itemName)) {
-                        System.out.println();
-                }
+                    adventure.eat(itemName);
                     break;
                 case "inventory":
                     adventure.getInventury();

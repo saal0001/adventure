@@ -17,11 +17,11 @@ public class Item {
         return description;
     }
 
-    /*@Override
+    @Override
     public String toString() {
         return "Item{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';
-    }*/
+    }
 }

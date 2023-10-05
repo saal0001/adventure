@@ -6,4 +6,21 @@ public class Weapon extends Item {
         super(name, description);
         this.damage=damage;
     }
+
+    public String getName(){
+        return super.getName();
+    }
+
+    public String getDescription(){
+        return super.getDescription();
+    }
+
+    @Override
+    public String toString() {
+        return "Weapon{" +
+                "name=" + getName() +'\'' +
+                ", description="+ getDescription()+ '\'' +
+                ", damage=" + damage +
+                '}';
+    }
 }
