@@ -3,7 +3,6 @@ package adventurepack;
 import java.time.LocalDate;
 
 public class Food extends Item {
-private LocalDate expTime;
 private int healthPoints;
 
     public Food(String name, String description,int healthPoints) {
@@ -19,9 +18,6 @@ private int healthPoints;
         return super.getDescription();
     }
 
-    public LocalDate getExpTime(){
-        return expTime;
-    }
     public int getHealthPoints(){
         return healthPoints;
     }
@@ -32,6 +28,8 @@ private int healthPoints;
                     "name='" + getName() + '\'' +
                     ", description='" + getDescription() + '\'' +
                     '}';
+
         }
-    }
+}
+
 
