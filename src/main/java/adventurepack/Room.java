@@ -85,11 +85,8 @@ public void addFood(String name, String description,int healthPoints){
         roomItems.add(new Food(name, description,healthPoints));
 }
 
-/*public Item findItem(String name){
-        for (Item item:roomItems){
+public void addWeapon
 
-        }
-}*/
 }
 
 
