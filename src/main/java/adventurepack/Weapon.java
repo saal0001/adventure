@@ -2,11 +2,17 @@ package adventurepack;
 
 public class Weapon extends Item {
     private int damage;
+    private Weapon starterWeapon;
     public Weapon(String name, String description,int damage) {
         super(name, description);
         this.damage=damage;
     }
+    public Weapon(){
+    }
 
+    public Weapon getStarterWeapon(){
+        return null;
+    }
     public String getName(){
         return super.getName();
     }

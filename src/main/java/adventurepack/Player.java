@@ -11,17 +11,17 @@ private Weapon currentWeapon;
 
 
 public void equip(String itemName){
+    Item found = null;
     for (Item item : inventory){
         if (item.getName().equalsIgnoreCase(itemName)){
             if (item instanceof Weapon){
-                item=currentWeapon;
-                System.out.println(currentWeapon);
-                inventory.remove(item);
+                found= item;
+                System.out.println(found);
             }
+            else System.out.println("not equippable");
         }
-        else System.out.println("item not equippable");
     }
-    System.out.println("item not in inventory");
+    inventory.remove(found);
 }
 
 
@@ -64,6 +64,10 @@ public void equip(String itemName){
         if (inventory != null) {
             System.out.println(inventory);
         }
+    }
+
+    public void setCurrentWeapon(Weapon newWeapon){
+    this.currentWeapon=newWeapon;
     }
 
     public void setCurrentRoom(Room newRoom) {

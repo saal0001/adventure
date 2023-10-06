@@ -3,14 +3,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Adventure {
+    private Weapon weapon;
 private Map map;
 private Player player;
 private Item item;
     public Adventure() {
+        weapon=new Weapon();
         map = new Map();
         map.buildMap();
         player=new Player();
         player.setCurrentRoom(map.getStarterRoom());
+        player.setCurrentWeapon(weapon.getStarterWeapon());
     }
 
 public void move(String retning){
@@ -44,8 +47,8 @@ public void eat(String itemName){
         player.eat(itemName);
 }
 
-public enum eatNotTrue{
-
+public void equip(String itemName){
+        player.equip(itemName);
 }
 
 }

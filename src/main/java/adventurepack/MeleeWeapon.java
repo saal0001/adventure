@@ -1,3 +1,5 @@
+package adventurepack;
+
 import adventurepack.Weapon;
 
 public class MeleeWeapon extends Weapon {

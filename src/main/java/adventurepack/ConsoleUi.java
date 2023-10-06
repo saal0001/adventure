@@ -85,6 +85,11 @@ public class ConsoleUi {
                 case "help":
                     getHelp();
                     break;
+                case "equip":
+                    System.out.println("what do you want to equip");
+                    itemName=scanner.nextLine();
+                    adventure.equip(itemName);
+                    break;
                 case "quit":
                     System.exit(0);
                     break;
