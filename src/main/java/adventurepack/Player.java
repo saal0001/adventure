@@ -9,7 +9,7 @@ private int health=100;
 private Weapon currentWeapon;
 
 
-
+//equp metoden virker
 public void equip(String itemName){
     Item found = null;
     for (Item item : inventory){
