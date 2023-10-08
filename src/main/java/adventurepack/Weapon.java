@@ -10,6 +10,10 @@ public class Weapon extends Item {
     public Weapon(){
     }
 
+    public int getDamage() {
+        return damage;
+    }
+
     public Weapon getStarterWeapon(){
         return null;
     }

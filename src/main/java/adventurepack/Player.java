@@ -17,6 +17,7 @@ public void equip(String itemName){
             if (item instanceof Weapon){
                 found= item;
                 System.out.println(found);
+                this.setCurrentWeapon((Weapon) item);
             }
             else System.out.println("not equippable");
         }
@@ -68,6 +69,10 @@ public void equip(String itemName){
 
     public void setCurrentWeapon(Weapon newWeapon){
     this.currentWeapon=newWeapon;
+    }
+
+    public Weapon getCurrentWeapon() {
+        return currentWeapon;
     }
 
     public void setCurrentRoom(Room newRoom) {

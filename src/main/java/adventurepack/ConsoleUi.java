@@ -93,6 +93,10 @@ public class ConsoleUi {
                 case "quit":
                     System.exit(0);
                     break;
+                case "attack":
+                    System.out.println("Attack with ranged or melee weapon");
+                    adventure.attack();
+                    break;
                 default:
                     System.out.println("Invalid command");
             }

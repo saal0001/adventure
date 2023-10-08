@@ -8,4 +8,11 @@ public class RangedWeapon extends Weapon {
         super(name, description, damage);
         this.amo=amo;
     }
+
+    public int getAmo() {
+        return amo;
+    }
+    public void shoot(){
+        amo = amo -1;
+    }
 }
