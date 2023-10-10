@@ -7,7 +7,6 @@ public class Adventure {
     private Weapon weapon;
     private Map map;
     private Player player;
-    private Item item;
 
     public Adventure() {
         weapon = new Weapon();
@@ -54,6 +53,13 @@ public class Adventure {
         player.equip(itemName);
     }
     public void attack(){
+        player.attack();
+    }
+
+    public void unequip(String itemName){
+        player.unequip(itemName);
+    }
+   /* public void attack(){
         Weapon weapon2 = player.getCurrentWeapon();
         if (weapon2 instanceof RangedWeapon){
             RangedWeapon rangedWeapon = (RangedWeapon) weapon2;
@@ -61,19 +67,19 @@ public class Adventure {
                 System.out.println("out of ammo");
                 return;
             }
-            System.out.println("you are shooting with Ranged weapon");
-            System.out.println("you are doing " + rangedWeapon.getDamage());
+            System.out.println("you are shooting with " + player.getCurrentWeapon().getName());
+            System.out.println("you are doing " + rangedWeapon.getDamage() +" damage");
             System.out.println("you have " + rangedWeapon.getAmo() + " shots left");
             rangedWeapon.shoot();
         } else if (weapon2 instanceof MeleeWeapon) {
             MeleeWeapon meleeWeapon = (MeleeWeapon) weapon2;
-            System.out.println("you are swinging ur Sword");
-            System.out.println("you are doing" + meleeWeapon.getDamage());
+            System.out.println("you are swinging ur "+player.getCurrentWeapon().getName());
+            System.out.println("you are doing" + meleeWeapon.getDamage() +" damage");
         } else {
             System.out.println("no weapon, u cannot attack anything");
 
         }
-    }
+    }*/
 
 }
 

@@ -2,7 +2,6 @@ package adventurepack;
 
 public class Weapon extends Item {
     private int damage;
-    private Weapon starterWeapon;
     public Weapon(String name, String description,int damage) {
         super(name, description);
         this.damage=damage;
@@ -27,10 +26,9 @@ public class Weapon extends Item {
 
     @Override
     public String toString() {
-        return "Weapon{" +
-                "name=" + getName() +'\'' +
-                ", description="+ getDescription()+ '\'' +
-                ", damage=" + damage +
-                '}';
+        return "Weapon " +
+                 getName() +'\'' +
+                 getDescription()+ '\'' +
+                ", damage =" + damage;
     }
 }

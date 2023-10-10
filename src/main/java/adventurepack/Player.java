@@ -9,6 +9,35 @@ private int health=100;
 private Weapon currentWeapon;
 
 
+
+    public void attack(){
+        Weapon weapon2 = getCurrentWeapon();
+        if (weapon2 instanceof RangedWeapon){
+            RangedWeapon rangedWeapon = (RangedWeapon) weapon2;
+            if (rangedWeapon.getAmo() <= 0){
+                System.out.println("out of ammo");
+                return;
+            }
+            System.out.println("you are shooting with " + getCurrentWeapon().getName());
+            System.out.println("you are doing " + rangedWeapon.getDamage() +" damage");
+            System.out.println("you have " + rangedWeapon.getAmo() + " shots left");
+            rangedWeapon.shoot();
+        } else if (weapon2 instanceof MeleeWeapon) {
+            MeleeWeapon meleeWeapon = (MeleeWeapon) weapon2;
+            System.out.println("you are swinging ur "+ getCurrentWeapon().getName());
+            System.out.println("you are doing" + meleeWeapon.getDamage() + " damage");
+        } else {
+            System.out.println("no weapon, u cannot attack anything");
+
+        }
+    }
+public void unequip(String itemName){
+        if (currentWeapon.getName().equals(itemName)){
+            inventory.add(currentWeapon);
+        }
+        currentWeapon=null;
+}
+
 //equp metoden virker
 public void equip(String itemName){
     Item found = null;

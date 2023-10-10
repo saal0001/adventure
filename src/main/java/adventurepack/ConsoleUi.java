@@ -90,11 +90,14 @@ public class ConsoleUi {
                     itemName=scanner.nextLine();
                     adventure.equip(itemName);
                     break;
+                case "unequip":
+                    System.out.println("what do you want to unequip");
+                    itemName=scanner.nextLine();
+                    adventure.unequip(itemName);
                 case "quit":
                     System.exit(0);
                     break;
                 case "attack":
-                    System.out.println("Attack with ranged or melee weapon");
                     adventure.attack();
                     break;
                 default:

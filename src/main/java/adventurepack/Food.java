@@ -24,10 +24,9 @@ private int healthPoints;
 
         @Override
         public String toString() {
-            return "Food{" +
-                    "name='" + getName() + '\'' +
-                    ", description='" + getDescription() + '\'' +
-                    '}';
+            return "Food " +
+                     getName() + '\'' +
+                      getDescription() + '\'';
 
         }
 }
