@@ -35,6 +35,7 @@ public class Map {
         room6 = new Room("room6", "very bright room filled with mushrooms, and flowers");
         room7 = new Room("room7", "this room only has a door, nothing else");
         room7.addMeleeWeapon("sword", "use to fight monsters", 15);
+        room7.setEnemy(new Enemy("gargoyle", "troll",60, new Weapon("axe", "Bloody axe which looks cool", 15)));
         room8 = new Room("room8", "there is only 2 chairs and a table in this room, its painted red");
         room9 = new Room("room9", "big cave, with drawings on the wall and old dead rat on the floor");
         room9.addFood("a weird looking potion", "could increase or decrease a stat", -15);

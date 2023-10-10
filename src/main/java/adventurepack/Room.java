@@ -10,7 +10,8 @@ public class Room {
     private Room south;
     private String description;
     private String name;
-    private ArrayList<Item> roomItems=new ArrayList<Item>();
+    private ArrayList<Item> roomItems = new ArrayList<Item>();
+    private Enemy enemy;
 
     public Room(String name, String description) {
         this.description = description;
@@ -72,26 +73,39 @@ public class Room {
         }
     }
 
-    public ArrayList<Item> getRoomItems(){
+    public ArrayList<Item> getRoomItems() {
         return roomItems;
     }
 
-public void addItem(String name, String description){
-        roomItems.add(new Item(name,description));
-}
-
-public void addFood(String name, String description,int healthPoints){
-        roomItems.add(new Food(name, description,healthPoints));
-}
-
-public void addMeleeWeapon(String name, String description,int damage){
-        roomItems.add(new MeleeWeapon(name, description,damage));
-}
-    public void addRangedWeapon(String name, String description,int damage, int amo){
-        roomItems.add(new RangedWeapon(name, description,damage, amo));
+    public void addItem(String name, String description) {
+        roomItems.add(new Item(name, description));
     }
 
+    public void addFood(String name, String description, int healthPoints) {
+        roomItems.add(new Food(name, description, healthPoints));
+    }
+
+    public void addMeleeWeapon(String name, String description, int damage) {
+        roomItems.add(new MeleeWeapon(name, description, damage));
+    }
+    public void addWeapon(Weapon weapon1){
+        roomItems.add(weapon1);
+    }
+
+    public void addRangedWeapon(String name, String description, int damage, int amo) {
+        roomItems.add(new RangedWeapon(name, description, damage, amo));
+    }
+
+    public void setEnemy(Enemy enemy) {
+        this.enemy = enemy;
+    }
+
+    public Enemy getEnemy() {
+        return this.enemy;
+
+    }
 }
+
 
 
 
