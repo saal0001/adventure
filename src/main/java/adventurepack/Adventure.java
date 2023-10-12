@@ -52,11 +52,12 @@ public class Adventure {
     public void equip(String itemName) {
         player.equip(itemName);
     }
-    public void attack(){
+
+    public void attack() {
         player.attack();
     }
 
-    public void unequip(String itemName){
+    public void unequip(String itemName) {
         player.unequip(itemName);
     }
 

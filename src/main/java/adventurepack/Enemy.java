@@ -26,7 +26,8 @@ public class Enemy {
     public void setHealth(int health) {
         this.health = health;
     }
-    public Weapon getWeapon(){
+
+    public Weapon getWeapon() {
         return weapon;
     }
 

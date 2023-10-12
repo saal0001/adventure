@@ -1,13 +1,13 @@
 package adventurepack;
 
 import adventurepack.Adventure;
+
 import java.util.Scanner;
 
 public class ConsoleUi {
     Scanner scanner = new Scanner(System.in);
     boolean fortsæt = true;
     private Adventure adventure = new Adventure();
-
 
 
     public void run() {
@@ -63,12 +63,12 @@ public class ConsoleUi {
                     break;
                 case "pick up":
                     System.out.println("what do you want to pick up");
-                    itemName= scanner.nextLine();
+                    itemName = scanner.nextLine();
                     adventure.pickUp(itemName);
                     break;
                 case "drop":
                     System.out.println("what do you want to drop");
-                    itemName=scanner.nextLine();
+                    itemName = scanner.nextLine();
                     adventure.drop(itemName);
                     break;
                 case "health":
@@ -76,7 +76,7 @@ public class ConsoleUi {
                     break;
                 case "eat":
                     System.out.println("what do you want to eat");
-                    itemName=scanner.nextLine();
+                    itemName = scanner.nextLine();
                     adventure.eat(itemName);
                     break;
                 case "inventory":
@@ -87,12 +87,12 @@ public class ConsoleUi {
                     break;
                 case "equip":
                     System.out.println("what do you want to equip");
-                    itemName=scanner.nextLine();
+                    itemName = scanner.nextLine();
                     adventure.equip(itemName);
                     break;
                 case "unequip":
                     System.out.println("what do you want to unequip");
-                    itemName=scanner.nextLine();
+                    itemName = scanner.nextLine();
                     adventure.unequip(itemName);
                 case "quit":
                     System.exit(0);

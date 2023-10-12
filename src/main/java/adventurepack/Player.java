@@ -109,7 +109,7 @@ public class Player {
         Room nextRoom = currentRoom.getRoom(retning);
         if (nextRoom != null) {
             currentRoom = nextRoom;
-            if (nextRoom.getEnemy() != null){
+            if (nextRoom.getEnemy() != null) {
                 System.out.println("there is an enemy u have to fight in this room");
                 fight(currentRoom.getEnemy());
             }
@@ -120,26 +120,26 @@ public class Player {
         }
     }
 
-    public void fight(Enemy fightenemy){
+    public void fight(Enemy fightenemy) {
         int enemyhealth = fightenemy.getHealth();
-        while (true){
+        while (true) {
             System.out.println("enter command");
             Scanner scanner = new Scanner(System.in);
             String command = scanner.nextLine();
-            switch (command){
+            switch (command) {
                 case "attack":
-                    if (getCurrentWeapon() != null){
-                       enemyhealth = enemyhealth - getCurrentWeapon().getDamage();
-                       if (enemyhealth <= 0){
-                           System.out.println("The enemy is dead, it drops its weapon");
-                           this.currentRoom.addWeapon(fightenemy.getWeapon());
-                           this.currentRoom.setEnemy(null);
-                           return;
-                       }
+                    if (getCurrentWeapon() != null) {
+                        enemyhealth = enemyhealth - getCurrentWeapon().getDamage();
+                        if (enemyhealth <= 0) {
+                            System.out.println("The enemy is dead, it drops its weapon");
+                            this.currentRoom.addWeapon(fightenemy.getWeapon());
+                            this.currentRoom.setEnemy(null);
+                            return;
+                        }
                         System.out.println("ur enemy has " + enemyhealth + " health, u hit him for " + getCurrentWeapon().getDamage());
                         Weapon enemyweapon = fightenemy.getWeapon();
                         health = health - enemyweapon.getDamage();
-                        System.out.println("u have " + health + " health, he hit u for " + enemyweapon.getDamage() + " 1damage" );
+                        System.out.println("u have " + health + " health, he hit u for " + enemyweapon.getDamage() + " 1damage");
 
                     } else {
                         System.out.println("u cant attack");
@@ -154,6 +154,7 @@ public class Player {
         }
 
     }
+
     public void lookAround() {
         System.out.println(currentRoom.getName() + ": " + currentRoom.getDescription() + " " + currentRoom.getRoomItems());
     }
